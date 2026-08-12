@@ -16,6 +16,8 @@ Apps that still import `package:flutter/material.dart` must migrate to
 - Depend on `material_ui` `^1.0.0`.
 - Wrap `ReactiveRadio` and `ReactiveRadioListTile` in `RadioGroup` instead of
   the deprecated `groupValue` / `onChanged` radio API.
+- Forward `selectAllOnFocus` and `enableInlinePrediction` on
+  `ReactiveTextField`.
 
 ## Fixes
 

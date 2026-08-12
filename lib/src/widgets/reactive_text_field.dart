@@ -165,6 +165,8 @@ class ReactiveTextField<T> extends ReactiveFormField<T, String> {
     SpellCheckConfiguration? spellCheckConfiguration,
     TextMagnifierConfiguration? magnifierConfiguration,
     WidgetStatesController? statesController,
+    bool? selectAllOnFocus,
+    bool? enableInlinePrediction,
   }) : _textController = controller,
        super(
          builder: (ReactiveFormFieldState<T, String> field) {
@@ -257,6 +259,8 @@ class ReactiveTextField<T> extends ReactiveFormField<T, String> {
              spellCheckConfiguration: spellCheckConfiguration,
              magnifierConfiguration: magnifierConfiguration,
              statesController: statesController,
+             selectAllOnFocus: selectAllOnFocus,
+             enableInlinePrediction: enableInlinePrediction,
            );
          },
        );
