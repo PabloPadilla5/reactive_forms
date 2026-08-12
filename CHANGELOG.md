@@ -19,6 +19,10 @@ Apps that still import `package:flutter/material.dart` must migrate to
 - Forward `selectAllOnFocus` and `enableInlinePrediction` on
   `ReactiveTextField`.
 
+## Chores
+
+- Bump `flutter_lints` to `^6.0.0`.
+
 ## Fixes
 
 - Replace deprecated `Switch` / `SwitchListTile` `activeColor` with
