@@ -48,27 +48,31 @@ class ReactiveRadio<T> extends ReactiveFocusableFormField<T, T> {
     ReactiveFormFieldCallback<T>? onChanged,
   }) : super(
          builder: (field) {
-           return Radio<T>(
-             value: value,
+           return RadioGroup<T>(
              groupValue: field.value,
-             activeColor: activeColor,
-             focusColor: focusColor,
-             hoverColor: hoverColor,
-             fillColor: fillColor,
-             overlayColor: overlayColor,
-             mouseCursor: mouseCursor,
-             splashRadius: splashRadius,
-             materialTapTargetSize: materialTapTargetSize,
-             visualDensity: visualDensity,
-             autofocus: autofocus,
-             toggleable: toggleable,
-             focusNode: field.focusNode,
-             onChanged: field.control.enabled
-                 ? (value) {
-                     field.didChange(value);
-                     onChanged?.call(field.control);
-                   }
-                 : null,
+             onChanged: (value) {
+               if (!field.control.enabled) {
+                 return;
+               }
+               field.didChange(value);
+               onChanged?.call(field.control);
+             },
+             child: Radio<T>(
+               value: value,
+               enabled: field.control.enabled,
+               activeColor: activeColor,
+               focusColor: focusColor,
+               hoverColor: hoverColor,
+               fillColor: fillColor,
+               overlayColor: overlayColor,
+               mouseCursor: mouseCursor,
+               splashRadius: splashRadius,
+               materialTapTargetSize: materialTapTargetSize,
+               visualDensity: visualDensity,
+               autofocus: autofocus,
+               toggleable: toggleable,
+               focusNode: field.focusNode,
+             ),
            );
          },
        );
