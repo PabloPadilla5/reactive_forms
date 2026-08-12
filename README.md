@@ -64,8 +64,14 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Minimum Requirements
 
-- Dart SDK: ^3.7.0
-- Flutter: ">=3.29.0"
+- Dart SDK: ^3.12.0
+- Flutter: ">=3.44.0"
+- `package:material_ui` `^1.0.0` (Flutter 3.47 standalone Material library)
+
+> **v19.x** uses `package:material_ui` instead of `package:flutter/material.dart`.
+> Run `dart fix --apply --code=migrate_design_widgets` in your app, or import
+> `package:material_ui/material_ui.dart`, so widget types such as
+> `InputDecoration` match this package.
 
 > For using **Reactive Forms** in projects below Flutter 2.8.0, please use version <= 10.7.0 of
 > **Reactive Forms**.
@@ -88,10 +94,18 @@ dependencies:
   flutter:
     sdk: flutter
 
-  reactive_forms: ^18.2.2
+  reactive_forms: ^19.0.0
+  material_ui: ^1.0.0
 ```
 
 Then, run the command `flutter packages get` in the console.
+
+Import Material from the standalone package:
+
+```dart
+import 'package:material_ui/material_ui.dart';
+import 'package:reactive_forms/reactive_forms.dart';
+```
 
 ## Creating a Form
 

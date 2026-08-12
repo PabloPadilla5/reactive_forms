@@ -1,3 +1,20 @@
+# 19.0.0
+
+## Breaking changes
+
+- Migrate Material widgets from `package:flutter/material.dart` to the
+  standalone `package:material_ui` introduced in Flutter 3.47.
+- Raise the minimum Flutter version to `3.44.0` and the Dart SDK to `^3.12.0`.
+
+Apps that still import `package:flutter/material.dart` must migrate to
+`package:material_ui` (or wrap legacy subtrees with
+`MaterialUiCompatibilityBridge`) so types such as `InputDecoration` and
+`TimeOfDay` match this package.
+
+## Features
+
+- Depend on `material_ui` `^1.0.0`.
+
 # 18.2.2
 
 ## Fixes

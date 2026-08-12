@@ -660,8 +660,9 @@ abstract class AbstractControl<T> {
   }
 
   void _setInitialStatus() {
-    _status =
-        allControlsDisabled() ? ControlStatus.disabled : ControlStatus.valid;
+    _status = allControlsDisabled()
+        ? ControlStatus.disabled
+        : ControlStatus.valid;
   }
 
   void _updateAncestors(bool updateParent) {
@@ -1831,14 +1832,13 @@ class FormArray<T> extends FormControlCollection<List<T?>> {
   ///
   /// Retrieves all values regardless of disabled status.
   @override
-  List<T?> get rawValue =>
-      _controls.map<T?>((control) {
-        if (control is FormControlCollection<T?>) {
-          return (control as FormControlCollection<T?>).rawValue;
-        }
+  List<T?> get rawValue => _controls.map<T?>((control) {
+    if (control is FormControlCollection<T?>) {
+      return (control as FormControlCollection<T?>).rawValue;
+    }
 
-        return control.value;
-      }).toList();
+    return control.value;
+  }).toList();
 
   /// Sets the value of the [FormArray].
   ///
@@ -2228,14 +2228,13 @@ class FormArray<T> extends FormControlCollection<List<T?>> {
     }
 
     if (value != null && value.length > _controls.length) {
-      final newControls =
-          value
-              .toList()
-              .asMap()
-              .entries
-              .where((entry) => entry.key >= _controls.length)
-              .map((entry) => FormControl<T>(value: entry.value))
-              .toList();
+      final newControls = value
+          .toList()
+          .asMap()
+          .entries
+          .where((entry) => entry.key >= _controls.length)
+          .map((entry) => FormControl<T>(value: entry.value))
+          .toList();
 
       addAll(newControls, updateParent: updateParent, emitEvent: emitEvent);
     } else {

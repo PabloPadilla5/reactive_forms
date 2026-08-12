@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import 'reactive_text_field_testing_widget.dart';
@@ -268,8 +268,8 @@ void main() {
       await tester.pumpWidget(
         ReactiveTextFieldTestingWidget<String>(
           form: form,
-          showErrors:
-              (control) => control.invalid && control.touched && control.dirty,
+          showErrors: (control) =>
+              control.invalid && control.touched && control.dirty,
         ),
       );
 

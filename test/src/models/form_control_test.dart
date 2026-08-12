@@ -85,8 +85,8 @@ void main() {
 
     test('Assert error if debounce time < 0', () {
       void formControl() =>
-      // ignore: deprecated_member_use_from_same_package
-      FormControl<dynamic>(asyncValidatorsDebounceTime: -1);
+          // ignore: deprecated_member_use_from_same_package
+          FormControl<dynamic>(asyncValidatorsDebounceTime: -1);
       expect(formControl, throwsAssertionError);
     });
 
