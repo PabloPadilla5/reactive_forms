@@ -30,7 +30,8 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
     super.formControlName,
     super.formControl,
     Color? tileColor,
-    Color? activeColor,
+    @Deprecated('Use activeThumbColor instead.') Color? activeColor,
+    Color? activeThumbColor,
     Color? activeTrackColor,
     Color? inactiveThumbColor,
     Color? inactiveTrackColor,
@@ -68,7 +69,7 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return SwitchListTile(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeThumbColor ?? activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,
@@ -131,7 +132,8 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
     super.key,
     super.formControlName,
     super.formControl,
-    Color? activeColor,
+    @Deprecated('Use activeThumbColor instead.') Color? activeColor,
+    Color? activeThumbColor,
     Color? activeTrackColor,
     Color? inactiveThumbColor,
     Color? inactiveTrackColor,
@@ -171,7 +173,7 @@ class ReactiveSwitchListTile extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return SwitchListTile.adaptive(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeThumbColor ?? activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,

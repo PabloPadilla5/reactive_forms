@@ -17,6 +17,11 @@ Apps that still import `package:flutter/material.dart` must migrate to
 - Wrap `ReactiveRadio` and `ReactiveRadioListTile` in `RadioGroup` instead of
   the deprecated `groupValue` / `onChanged` radio API.
 
+## Fixes
+
+- Replace deprecated `Switch` / `SwitchListTile` `activeColor` with
+  `activeThumbColor`. `activeColor` remains as a deprecated alias.
+
 # 18.2.2
 
 ## Fixes

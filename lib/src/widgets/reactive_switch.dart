@@ -37,7 +37,8 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
     super.formControlName,
     super.formControl,
     super.focusNode,
-    Color? activeColor,
+    @Deprecated('Use activeThumbColor instead.') Color? activeColor,
+    Color? activeThumbColor,
     Color? activeTrackColor,
     Color? inactiveThumbColor,
     Color? inactiveTrackColor,
@@ -65,7 +66,7 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return Switch(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeThumbColor ?? activeColor,
              trackOutlineColor: trackOutlineColor,
              thumbIcon: thumbIcon,
              onFocusChange: onFocusChange,
@@ -124,7 +125,8 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
     super.formControlName,
     super.formControl,
     super.focusNode,
-    Color? activeColor,
+    @Deprecated('Use activeThumbColor instead.') Color? activeColor,
+    Color? activeThumbColor,
     Color? activeTrackColor,
     Color? inactiveThumbColor,
     Color? inactiveTrackColor,
@@ -153,7 +155,7 @@ class ReactiveSwitch extends ReactiveFocusableFormField<bool, bool> {
          builder: (field) {
            return Switch.adaptive(
              value: field.value ?? false,
-             activeColor: activeColor,
+             activeThumbColor: activeThumbColor ?? activeColor,
              activeTrackColor: activeTrackColor,
              inactiveThumbColor: inactiveThumbColor,
              inactiveTrackColor: inactiveTrackColor,
