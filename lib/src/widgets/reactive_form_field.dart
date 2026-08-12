@@ -75,6 +75,7 @@ class ReactiveFormField<ModelDataType, ViewDataType> extends StatefulWidget {
              (formControlName == null && formControl != null),
          'Must provide a formControlName or a formControl, but not both at the same time.',
        ),
+       // ignore: prefer_initializing_formals
        _builder = builder;
 
   @override

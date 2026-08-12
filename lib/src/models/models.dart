@@ -72,6 +72,7 @@ abstract class AbstractControl<T> {
     bool touched = false,
   }) : assert(asyncValidatorsDebounceTime >= 0),
        _asyncValidatorsDebounceTime = asyncValidatorsDebounceTime,
+       // ignore: prefer_initializing_formals
        _touched = touched,
        _initialDisabled = disabled,
        _status = disabled ? ControlStatus.disabled : ControlStatus.valid {
@@ -458,7 +459,7 @@ abstract class AbstractControl<T> {
     _status = ControlStatus.pending;
 
     if (emitEvent) {
-      this._statusChanges.add(_status);
+      _statusChanges.add(_status);
     }
 
     if (updateParent) {
