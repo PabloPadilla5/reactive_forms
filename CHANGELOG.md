@@ -21,6 +21,8 @@ Apps that still import `package:flutter/material.dart` must migrate to
 
 - Replace deprecated `Switch` / `SwitchListTile` `activeColor` with
   `activeThumbColor`. `activeColor` remains as a deprecated alias.
+- Use `initialValue` instead of the deprecated `value` parameter on
+  `DropdownButtonFormField`.
 
 # 18.2.2
 

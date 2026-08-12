@@ -85,7 +85,7 @@ class ReactiveDropdownField<T> extends ReactiveFocusableFormField<T, T> {
            }
 
            return DropdownButtonFormField<T>(
-             value: effectiveValue,
+             initialValue: effectiveValue,
              decoration: effectiveDecoration.copyWith(
                errorText: field.errorText,
                enabled: !isDisabled,
